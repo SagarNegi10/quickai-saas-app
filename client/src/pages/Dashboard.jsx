@@ -1,3 +1,4 @@
+import { Layout } from 'lucide-react'
 import React from 'react'
 
 const Dashboard = () => {
