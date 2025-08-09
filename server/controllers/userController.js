@@ -24,7 +24,7 @@ export const getPublishedCreations = async (req, res) => {
     }
 }
 
-export const toogelLikeCreations = async (req, res) => {
+export const toogelLikeCreation = async (req, res) => {
     try {
         const {userId} = req.auth()
         const {id} = req.body
@@ -51,7 +51,7 @@ export const toogelLikeCreations = async (req, res) => {
 
         const formattedArray = `{${updatedLikes.join(',')}}`
 
-        await sql`update creations set likes = ${formattedArray}:text[] where id = ${id}`;
+        await sql`update creations set likes = ${formattedArray}::text[] where id = ${id}`;
 
         res.json({success: true, message})
 
