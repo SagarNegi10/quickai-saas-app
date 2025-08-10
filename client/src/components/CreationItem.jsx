@@ -22,19 +22,32 @@ const CreationItem = ({ item }) => {
       </div>
       {expanded && (
         <div className="">
-          {item.type === "image" ? (
+          {expanded && (
             <div>
-              <img
-                src={item.content}
-                alt="image"
-                className="mt-3 w-full max-w-md"
-              />
-            </div>
-          ) : (
-            <div className="mt-3 h-full overflow-y-scroll text-sm text-slate-700">
-              <div className="reset-tw">
-                <MarkDown>{item.content}</MarkDown>
-              </div>
+              {item.type === "image" ? (
+                <div className="flex flex-row items-center gap-4 p-4">
+                  <img
+                    src={item.content}
+                    alt="image"
+                    className="max-w-35 max-h-35 rounded-lg object-contain"
+                  />
+                  <a
+                    href={item.content}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="px-4 py-2 bg-[#00AD25] text-white text-xs rounded-lg shadow hover:bg-[#009920] transition"
+                  >
+                    Download Image
+                  </a>
+                </div>
+              ) : (
+                <div className="mt-3 h-full overflow-y-auto text-sm text-slate-700">
+                  <div className="reset-tw">
+                    <MarkDown>{item.content}</MarkDown>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>

@@ -45,7 +45,11 @@ const GenerateImages = () => {
         toast.error(data.message || "Failed to generate image");
       }
     } catch (error) {
-      toast.error(error?.response?.data?.message || error.message || "Something went wrong");
+      toast.error(
+        error?.response?.data?.message ||
+          error.message ||
+          "Something went wrong"
+      );
     } finally {
       setLoading(false);
     }
@@ -132,12 +136,21 @@ const GenerateImages = () => {
             </div>
           </div>
         ) : (
-          <div className="mt-3 flex justify-center">
+          <div className="mt-3 flex flex-col items-center gap-4">
             <img
               src={content}
               alt="Generated"
-              className="mt-3 max-w-full rounded-lg object-cover"
+              className="max-w-100 max-h-100 rounded-lg object-cover"
             />
+            <a
+              href={content}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="px-4 py-2 bg-[#00AD25] text-white text-sm rounded-lg shadow hover:bg-[#009920] transition"
+            >
+              Download Image
+            </a>
           </div>
         )}
       </div>

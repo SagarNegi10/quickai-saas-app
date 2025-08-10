@@ -32,9 +32,13 @@ const RemoveObject = () => {
       formData.append("object", object);
 
       const token = await getToken();
-      const { data } = await axios.post("/api/ai/remove-image-object", formData, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const { data } = await axios.post(
+        "/api/ai/remove-image-object",
+        formData,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       if (data.success) {
         setContent(data.content);
@@ -42,7 +46,9 @@ const RemoveObject = () => {
         toast.error(data.message || "Something went wrong");
       }
     } catch (error) {
-      toast.error(error?.response?.data?.message || error.message || "An error occurred");
+      toast.error(
+        error?.response?.data?.message || error.message || "An error occurred"
+      );
     } finally {
       setLoading(false);
     }
@@ -107,12 +113,21 @@ const RemoveObject = () => {
             </div>
           </div>
         ) : (
-          <div className="mt-3 flex justify-center">
+          <div className="mt-3 flex flex-col items-center gap-4">
             <img
               src={content}
               alt="Processed"
-              className="max-w-full rounded-lg object-cover"
+              className="max-w-100 max-h-100 rounded-lg object-cover"
             />
+            <a
+              href={content}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="px-4 py-2 bg-[#4A7AFF] text-white text-sm rounded-lg shadow hover:bg-[#3e6fe0] transition"
+            >
+              Download Image
+            </a>
           </div>
         )}
       </div>

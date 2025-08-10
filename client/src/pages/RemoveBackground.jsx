@@ -34,7 +34,9 @@ const RemoveBackground = () => {
         toast.error(data.message || "Something went wrong");
       }
     } catch (error) {
-      toast.error(error?.response?.data?.message || error.message || "An error occurred");
+      toast.error(
+        error?.response?.data?.message || error.message || "An error occurred"
+      );
     } finally {
       setLoading(false);
     }
@@ -92,16 +94,27 @@ const RemoveBackground = () => {
           <div className="flex-1 flex justify-center items-center">
             <div className="text-sm flex flex-col items-center gap-5 text-gray-400">
               <Eraser className="w-9 h-9" />
-              <p>Upload an image and click "Remove Background" to get started</p>
+              <p>
+                Upload an image and click "Remove Background" to get started
+              </p>
             </div>
           </div>
         ) : (
-          <div className="mt-3 flex justify-center">
+          <div className="mt-3 flex flex-col items-center gap-4">
             <img
               src={content}
               alt="Processed"
-              className="max-w-full rounded-lg object-cover"
+              className="max-w-100 max-h-100 rounded-lg object-cover"
             />
+            <a
+              href={content}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="px-4 py-2 bg-[#FF4938] text-white text-sm rounded-lg shadow hover:bg-[#e13f30] transition"
+            >
+              Download Image
+            </a>
           </div>
         )}
       </div>
