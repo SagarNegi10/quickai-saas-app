@@ -8,7 +8,7 @@ const Plan = () => {
         <h2 className="text-slate-700 text-[42px] font-semibold">
           Choose Your Plan
         </h2>
-        <p className="text-gray-500 max-w-lg mx-auto">
+        <p className="text-gray-500 max-w-lg mx-auto text-center">
           Start for free and upgrade anytime. Pick the perfect plan that fits
           your creative journey.
         </p>

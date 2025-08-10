@@ -50,7 +50,7 @@ const Community = () => {
 
   return !loading ?  (
     <div className="flex-1 h-full flex flex-col gap-4 p-6">
-      <h2 className="text-2xl font-semibold text-gray-800">Community Creations</h2>
+      <h2 className="flex justify-center text-2xl font-semibold text-gray-800">Community Creations</h2>
       <div className="bg-white h-full w-full rounded-xl overflow-y-scroll">
         {creations.map((creation, index) => (
           <div
