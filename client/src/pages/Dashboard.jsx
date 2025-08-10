@@ -68,7 +68,7 @@ const Dashboard = () => {
           </div>
         ) : (
           <div className="space-y-3">
-        <p className="mt-6 mb-4">Recent Creations</p>
+        <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">Recent Creations</h2>
         {creations.map((item) => (
           <CreationItem key={item.id} item={item} />
         ))}

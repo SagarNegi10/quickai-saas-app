@@ -14,7 +14,10 @@ const Navbar = () => {
         src={assets.logo}
         alt="logo"
         className="w-32 md:w-44 cursor-pointer"
-        onClick={() => navigate("/")}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" }); 
+          navigate("/")
+        }}
       />
 
       {user ? (

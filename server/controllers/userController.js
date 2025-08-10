@@ -32,7 +32,7 @@ export const toogelLikeCreation = async (req, res) => {
         const [creations] = await sql`select * from creations where id = ${id}`
 
         if(!creations){
-            return res.json({success: false, message: "Creation not found"})
+            return res.json({success: false, message: "No creation found."})
         }
 
         const currentLikes = creations.likes

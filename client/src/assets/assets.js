@@ -23,42 +23,42 @@ export const assets = {
 export const AiToolsData = [
     {
         title: 'AI Article Writer',
-        description: 'Generate high-quality, engaging articles on any topic with our AI writing technology.',
+        description: 'Craft well-researched, engaging, and SEO-friendly articles on any topic in minutes.',
         Icon: SquarePen,
         bg: { from: '#3588F2', to: '#0BB0D7' },
         path: '/ai/write-article'
     },
     {
         title: 'Blog Title Generator',
-        description: 'Find the perfect, catchy title for your blog posts with our AI-powered generator.',
+        description: 'Instantly generate catchy, attention-grabbing blog titles that drive clicks.',
         Icon: Hash,
         bg: { from: '#B153EA', to: '#E549A3' },
         path: '/ai/blog-titles'
     },
     {
         title: 'AI Image Generation',
-        description: 'Create stunning visuals with our AI image generation tool, Experience the power of AI ',
+        description: 'Turn your ideas into stunning, high-quality visuals with powerful AI artistry.',
         Icon: Image,
         bg: { from: '#20C363', to: '#11B97E' },
         path: '/ai/generate-images'
     },
     {
         title: 'Background Removal',
-        description: 'Effortlessly remove backgrounds from your images with our AI-driven tool.',
+        description: 'Remove image backgrounds instantly and effortlessly for a clean, professional look.',
         Icon: Eraser,
         bg: { from: '#F76C1C', to: '#F04A3C' },
         path: '/ai/remove-background'
     },
     {
         title: 'Object Removal',
-        description: 'Remove unwanted objects from your images seamlessly with our AI object removal tool.',
+        description: 'Erase unwanted elements from photos seamlessly with precision AI editing.',
         Icon: Scissors,
         bg: { from: '#5C6AF1', to: '#427DF5' },
         path: '/ai/remove-object'
     },
     {
         title: 'Resume Reviewer',
-        description: 'Get your resume reviewed by AI to improve your chances of landing your dream job.',
+        description: 'Optimize your resume with AI-driven suggestions to boost interview success.',
         Icon: FileText,
         bg: { from: '#12B7AC', to: '#08B6CE' },
         path: '/ai/review-resume'

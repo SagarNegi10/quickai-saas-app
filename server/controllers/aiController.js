@@ -19,7 +19,7 @@ export const generateArticle = async (req, res) => {
         const free_usage = req.free_usage;
 
         if(plan !== 'premium' && free_usage >= 10){
-            return res.json({success: false, message: 'Limit reached. Upgrade to continue.'})
+            return res.json({success: false, message: 'Limit reached — upgrade now to unlock more.'})
         }
 
         const response = await AI.chat.completions.create({
@@ -62,7 +62,7 @@ export const generateBlogTitle = async (req, res) => {
         const free_usage = req.free_usage;
 
         if(plan !== 'premium' && free_usage >= 10){
-            return res.json({success: false, message: 'Limit reached. Upgrade to continue.'})
+            return res.json({success: false, message: 'Limit reached — upgrade now to unlock more.'})
         }
 
         const response = await AI.chat.completions.create({
@@ -104,7 +104,7 @@ export const generateImage= async (req, res) => {
         const plan = req.plan;
 
         if(plan !== 'premium'){
-            return res.json({success: false, message: 'This feature is only available for premium subscriptions.'})
+            return res.json({success: false, message: 'Go Premium to enjoy this feature.'})
         }
 
         const formData = new FormData()
@@ -134,7 +134,7 @@ export const removeImageBackground= async (req, res) => {
         const plan = req.plan;
 
         if(plan !== 'premium'){
-            return res.json({success: false, message: 'This feature is only available for premium subscriptions.'})
+            return res.json({success: false, message: 'Go Premium to enjoy this feature.'})
         }
 
         const {secure_url} = await cloudinary.uploader.upload(image.path, {
@@ -164,7 +164,7 @@ export const removeImageObject= async (req, res) => {
         const plan = req.plan;
 
         if(plan !== 'premium'){
-            return res.json({success: false, message: 'This feature is only available for premium subscriptions.'})
+            return res.json({success: false, message: 'Go Premium to enjoy this feature.'})
         }
 
         const {public_id} = await cloudinary.uploader.upload(image.path)
@@ -195,7 +195,7 @@ export const resumeReview= async (req, res) => {
         const plan = req.plan;
 
         if(plan !== 'premium'){
-            return res.json({success: false, message: 'This feature is only available for premium subscriptions.'})
+            return res.json({success: false, message: 'Go Premium to enjoy this feature.'})
         }
 
         if(resume.size > 5 * 1024 * 1024){

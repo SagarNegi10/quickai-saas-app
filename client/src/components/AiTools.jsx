@@ -1,6 +1,7 @@
 import { useUser } from "@clerk/clerk-react";
 import { AiToolsData } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const AiTools = () => {
   const navigate = useNavigate();
@@ -10,11 +11,11 @@ const AiTools = () => {
     <div className="px-4 sm:px-20 xl:px-32 my-24">
       <div className="text-center">
         <h2 className="text-slate-700 text-[40px] font-semibold">
-          Powerful AI Tools
+          Unleash the Power of AI
         </h2>
         <p className="text-gray-500 max-w-lg mx-auto">
-          Everything you need to create, enhance, and optimize your content with
-          cutting-edge AI technology.
+          Access a suite of intelligent tools to create, refine, and elevate
+          your content — faster, smarter, and with unmatched precision.
         </p>
       </div>
       <div className="flex flex-wrap mt-10 justify-center">
@@ -22,7 +23,9 @@ const AiTools = () => {
           <div
             key={index}
             className="p-8 m-4 max-w-xs rounded-lg bg-[#FDFDFE] shadow-lg border border-gray-100 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-            onClick={() => user && navigate(tool.path)}
+            onClick={() =>
+              user ? navigate(tool.path) : toast.error("Login to use tools")
+            }
           >
             <tool.Icon
               className="w-12 h-12 p-3 text-white rounded-xl"
